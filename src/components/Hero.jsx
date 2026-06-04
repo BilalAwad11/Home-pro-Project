@@ -4,123 +4,140 @@ import SecondP from '../assets/FreeQuotes.png';
 import ButtomBlue from '../assets/Button.png';
 import FirstbigP from '../assets/Image1.png';
 import SecondbigP from '../assets/Image2.png';
+import rightBolenganze from '../assets/Decoration1.png';
+import leftBolenganze from '../assets/Decoration.png';
+import Icon from '../assets/icons/icon.png';
+import Icon1 from '../assets/icons/icon.png'
+import Icon2 from '../assets/icons/icon.png'
+import Icon3 from '../assets/icons/icon.png'
 
 const Hero = () => {
   return (
-    <section 
-      className="bg-primary w-full flex flex-col justify-between text-white overflow-hidden relative"
-      style={{
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 92%, 83% 92%, 80% 100%, 20% 100%, 17% 92%, 0% 92%)',
-        minHeight: '977px'
-      }}
-    >
-  
-      <div className="flex flex-col lg:flex-row items-end justify-between w-full px-4 lg:px-12 flex-grow pb-16 pt-8 max-w-[1800px] mx-auto z-10">
-        
-        {/* Left Side Big Picture (Door Worker) */}
-        <div className="w-full lg:w-[28%] hidden lg:block self-end">
-          <img 
-            src={FirstbigP} 
-            alt="Door repair worker" 
-            className="w-full object-contain rounded-t-[32px] h-auto shadow-2xl"
-          />
-        </div>
+    <section className="bg-primary w-full text-white overflow-hidden relative pt-0 min-h-0 lg:min-h-[865px] flex items-center justify-center">
+      
+      {/* --- LEFT SIDE BACKGROUND WORKER (Door Worker) --- */}
+      <div className="hidden lg:block absolute left-0 top-0 w-[24%] max-w-[380px] z-0 select-none pointer-events-none">
+        <img 
+          src={FirstbigP} 
+          alt="Door repair worker" 
+          className="w-full object-contain rounded-tr-[32px] h-full block alignment-bottom"
+        />
+      </div>
 
-        {/* Middle Main Content */}
-        <div className="w-full lg:w-[44%] flex flex-col items-center text-center px-4 justify-center pb-24 gap-8">
-          
+      {/* --- RIGHT SIDE BACKGROUND WORKER (Plumber) --- */}
+      <div className="hidden lg:block absolute right-0 top-0 w-[24%] max-w-[380px] z-0 select-none pointer-events-none">
+        <img 
+          src={SecondbigP} 
+          alt="Plumber worker" 
+          className="w-full object-contain rounded-tl-[32px] h-full block alignment-bottom"
+        />
+      </div>
+
+      {/* Main Container Layout Layer (Centered content window) */}
+      <div className="w-full px-4 lg:px-12 pt-4 lg:pt-20 pb-16 lg:pb-[48px] max-w-[1800px] mx-auto z-10 relative flex justify-center">
+
+        {/* Middle Content Block */}
+        <div className="w-full lg:w-[55%] flex flex-col items-center text-center px-2 justify-center gap-5 lg:gap-8 lg:mb-4 z-20">
+
           {/* Subtext Tagline */}
-          <div className="text-[#9EA3B5] text-sm lg:text-base font-medium tracking-wide">
+          <div className="text-[#9EA3B5] text-xs lg:text-[15px] font-semibold tracking-widest uppercase mt-2">
             Maintenances &nbsp;&bull;&nbsp; Repairs &nbsp;&bull;&nbsp; Improvements
           </div>
           
           {/* Main Hero Header */}
-          <h1 className="text-4xl lg:text-[60px] font-bold leading-[1.15] tracking-tight max-w-2xl">
-            Need improvement<br/> or repair your home? <br />
+          <h1 className="text-[32px] sm:text-5xl lg:text-[56px] font-bold leading-[1.15] tracking-tight max-w-xl">
+            Need improvement<br className="hidden sm:inline"/> or repair your home? <br />
             <span className="text-white">we can help!</span>
           </h1>
           
           {/* Commitment and Quote Badges Row */}
-          <div className="flex flex-row items-center justify-center gap-6 my-1">
-            <img src={SecondP} alt="Free Quotes" className="h-5 object-contain" />
-            <img src={FirstP} alt="100% Commitment-Free" className="h-5 object-contain" />
+          <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 text-[#15B2F5] text-lg sm:text-[18px] font-medium">
+            <div className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Free Quotes</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>100% Commitment-Free</span>
+            </div>
           </div>
           
           {/* Call Action Button */}
-          <div className="mt-2">
+          <div className="mt-1">
             <button className="hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none">
-              <img src={ButtomBlue} alt="Call Us Now" className="h-[58px] object-contain" />
+              <img src={ButtomBlue} alt="Call Us Now" className="h-[48px] sm:h-[56px] object-contain" />
             </button>
           </div>
+          
+          
+          <div></div>
+          <div></div>
 
-        </div>
+          {/* --- FEATURES RIBBON COMPONENT --- */}
+          <div className="w-full mt-4 lg:mt-10 lg:w-[750px] lg:max-w-none">
+            <div className="grid grid-cols-2 lg:flex lg:flex-row items-center justify-between gap-0 lg:gap-2">
+              
+              {/* Badge 1: Satisfaction Guarantee */}
+              <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-2 lg:gap-2.5 py-6 px-2 justify-center border-b border-r border-slate-700/50 lg:border-none flex-1">
+                <img src={Icon} alt="" />
+                <span className="text-[11px] lg:text-[18px] font-medium max-w-[125px] lg:max-w-[120px] leading-tight text-slate-200">Satisfaction Guarantee</span>
+              </div>
 
-        {/* Right Side Big Picture (Plumber) */}
-        <div className="w-full lg:w-[28%] hidden lg:block self-end">
-          <img 
-            src={SecondbigP} 
-            alt="Plumber worker" 
-            className="w-full object-contain rounded-t-[32px] h-auto shadow-2xl"
-          />
+              {/* Desktop Vertical Divider 1 */}
+              <div className="hidden lg:block h-5 w-px bg-white/10"></div>
+
+              {/* Badge 2: 24H Availability */}
+              <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-2 lg:gap-2.5 py-6 px-2 justify-center border-b border-slate-700/50 lg:border-none flex-1">
+                <img src={Icon1} alt="" />
+                <span className="text-[11px] lg:text-[18px] font-medium max-w-[125px] lg:max-w-[120px] leading-tight text-slate-200">24H Availability</span>
+              </div>
+
+              {/* Desktop Vertical Divider 2 */}
+              <div className="hidden lg:block h-5 w-px bg-white/10"></div>
+
+              {/* Badge 3: Local US Professional */}
+              <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-2 lg:gap-2.5 py-6 px-2 justify-center border-r border-slate-700/50 lg:border-none flex-1">
+                <img src={Icon2} alt="" />
+                <span className="text-[11px] lg:text-[18px] font-medium max-w-[125px] lg:max-w-[120px] leading-tight text-slate-200">Local US Professional</span>
+              </div>
+
+              {/* Desktop Vertical Divider 3 */}
+              <div className="hidden lg:block h-5 w-px bg-white/10"></div>
+
+              {/* Badge 4: Flexible Appointments */}
+              <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-2 lg:gap-2.5 py-6 px-2 justify-center lg:border-none flex-1">
+                <img src={Icon3} alt="" />
+                <span className="text-[11px] lg:text-[18px] font-medium max-w-[125px] lg:max-w-[120px] leading-tight text-slate-200">Flexible Appointments</span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
         
       </div>
 
-      {/* Bottom Bar Features Row Layer */}
-      <div className="w-full bg-primary border-t border-white/5 py-5 z-20 absolute bottom-0 left-0 right-0">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 lg:flex lg:flex-row items-center justify-between gap-6 lg:gap-4">
-          
-          {/* Badge 1: Satisfaction Guarantee */}
-          <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-3 flex-1 justify-center">
-            <div className="w-10 h-10 rounded-full bg-[#1c2c5b] flex items-center justify-center text-sky-400 shrink-0">
-              <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-              </svg>
-            </div>
-            <span className="text-xs lg:text-sm font-semibold max-w-[125px] leading-tight text-slate-200">Satisfaction Guarantee</span>
-          </div>
+      {/* --- Absolute White Corner Pieces Layer --- */}
+      {/* Left Corner Graphic */}
+      <div className="lg:block absolute bottom-0 left-0 z-5 pointer-events-none select-none w-[25%] max-w-[450px]">
+        <img 
+          src={rightBolenganze} 
+          alt="" 
+          className="w-full h-auto object-contain object-left-bottom"
+        />
+      </div>
 
-          {/* Divider 1 */}
-          <div className="hidden lg:block h-7 w-px bg-white/10"></div>
-
-          {/* Badge 2: 24H Availability */}
-          <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-3 flex-1 justify-center">
-            <div className="w-10 h-10 rounded-full bg-[#1c2c5b] flex items-center justify-center text-sky-400 shrink-0">
-              <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <span className="text-xs lg:text-sm font-semibold max-w-[125px] leading-tight text-slate-200">24H Availability</span>
-          </div>
-
-          {/* Divider 2 */}
-          <div className="hidden lg:block h-7 w-px bg-white/10"></div>
-
-          {/* Badge 3: Local US Professional */}
-          <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-3 flex-1 justify-center">
-            <div className="w-10 h-10 rounded-full bg-[#1c2c5b] flex items-center justify-center text-sky-400 shrink-0">
-              <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-            </div>
-            <span className="text-xs lg:text-sm font-semibold max-w-[125px] leading-tight text-slate-200">Local US Professional</span>
-          </div>
-
-          {/* Divider 3 */}
-          <div className="hidden lg:block h-7 w-px bg-white/10"></div>
-
-          {/* Badge 4: Flexible Appointments */}
-          <div className="flex flex-col lg:flex-row items-center text-center lg:text-left gap-3 flex-1 justify-center">
-            <div className="w-10 h-10 rounded-full bg-[#1c2c5b] flex items-center justify-center text-sky-400 shrink-0">
-              <svg className="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <span className="text-xs lg:text-sm font-semibold max-w-[125px] leading-tight text-slate-200">Flexible Appointments</span>
-          </div>
-
-        </div>
+      {/* Right Corner Graphic */}
+      <div className="lg:block absolute bottom-0 right-0 z-5 pointer-events-none select-none w-[25%] max-w-[450px]">
+        <img 
+          src={leftBolenganze} 
+          alt="" 
+          className="w-full h-auto object-contain object-right-bottom"
+        />
       </div>
 
     </section>

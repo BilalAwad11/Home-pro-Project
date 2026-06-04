@@ -88,6 +88,7 @@ const OurServices = () => {
     <section className="bg-white w-full py-20 px-6 md:px-12 lg:px-24 text-center">
       
       {/* Header Container */}
+      
       <div className="max-w-3xl mx-auto mb-16 flex flex-col gap-4">
         <h2 className="text-4xl md:text-5xl font-bold text-[#111827]">
           Our Services
@@ -98,12 +99,12 @@ const OurServices = () => {
         </p>
       </div>
 
-      {/* Services Grid Layout */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 text-left">
+      {/* Services Grid Layout - Centered item elements on smaller phone screen sizes */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 justify-items-center sm:justify-items-start text-center sm:text-left">
         
         {/* Map through the 7 text services */}
         {servicesData.map((item) => (
-          <div key={item.id} className="flex flex-col gap-4 p-2">
+          <div key={item.id} className="flex flex-col items-center sm:items-start gap-4 p-2 w-full max-w-[304px] min-h-[180px]">
             {/* Shaped Icon Box */}
             <div className={`${item.iconBg} w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm`}>
               {item.icon}
@@ -114,23 +115,24 @@ const OurServices = () => {
               <h3 className="text-xl font-bold text-[#111827]">
                 {item.title}
               </h3>
-              <p className="text-[#6b7280] text-sm leading-relaxed max-w-[240px]">
+              <p className="text-[#6b7280] text-sm leading-relaxed max-w-[240px] mx-auto sm:mx-0">
                 {item.desc}
               </p>
             </div>
           </div>
         ))}
 
-        {/* 8th Item: Blue Custom Call-To-Action Card */}
-        <div className="bg-[#00a3ff] rounded-3xl p-8 flex flex-col justify-between text-center text-white min-h-[250px] shadow-lg">
-          <div className="flex flex-col gap-2 mt-2">
-            <h3 className="text-2xl font-bold">More service?</h3>
-            <p className="text-sm opacity-90 leading-relaxed px-2">
+        {/* 8th Item: Blue Custom Call-To-Action Card (304px * 180px) */}
+        <div className="bg-[#00a3ff] rounded-3xl p-6 flex flex-col justify-between text-center text-white w-full max-w-[304px] min-h-[180px] sm:h-full shadow-lg transition-transform duration-300 hover:-translate-y-1">
+          <div className="flex flex-col gap-1.5 mt-1">
+            <h3 className="text-xl font-bold">More service?</h3>
+            <p className="text-xs opacity-90 leading-relaxed px-1">
               You can tell us what you need and we can help!
             </p>
           </div>
           
-          <button className="bg-white text-[#00a3ff] font-bold py-4 px-6 rounded-full w-full hover:bg-opacity-95 transition-all duration-200 shadow-md">
+          {/* Animated and Interactive Action Button Layout */}
+          <button className="bg-white text-[#00a3ff] font-bold py-3 px-6 mt-3 rounded-full w-full transform transition-all duration-200 ease-out hover:bg-slate-50 hover:scale-[1.03] hover:shadow-md active:scale-[0.97] focus:outline-none">
             Call Us Now
           </button>
         </div>

@@ -27,7 +27,7 @@ const Footer = () => {
               placeholder="Enter email address" 
               className="w-full pl-4 pr-2 bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none text-sm md:text-base"
             />
-            <button className="bg-[#00a3ff] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-all duration-200 shadow-md text-sm md:text-base flex-shrink-0">
+            <button className="bg-[#00a3ff] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-all duration-200 shadow-md text-sm md:text-base flex-shrink-0 hover:bg-blue-200">
               Subscribe
             </button>
           </div>
@@ -83,7 +83,7 @@ const Footer = () => {
 
         {/* Copyright*/}
         <div className="w-full text-center text-sm text-white/60 pt-6 border-t border-white/10 mt-6">
-          ©2026 HomePro . All rights reserved
+          ©2023 HomePro . All rights reserved
         </div>
 
       </div>
